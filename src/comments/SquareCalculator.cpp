@@ -1,4 +1,4 @@
-#include "comments/X1.h"
+#include "comments/SquareCalculator.h"
 
 namespace refactoring::comments {
 
