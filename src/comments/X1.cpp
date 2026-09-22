@@ -3,14 +3,14 @@
 namespace refactoring::comments {
 
 int X1::m(int lowerBound, int upperBound) {
-    int p = 0;
+    int accumulatedSum = 0;
 
     for (int number = lowerBound; number <= upperBound; number++) {
-        p += square(number);
+        accumulatedSum += square(number);
     }
 
     // Return accumulated sum
-    return p;
+    return accumulatedSum;
 }
 
 int X1::square(int number) {
