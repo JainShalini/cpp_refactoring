@@ -13,8 +13,8 @@ int X1::m(int lowerBound, int upperBound) {
     return p;
 }
 
-int X1::square(int k) {
-    return k * k;
+int X1::square(int number) {
+    return number * number;
 }
 
 } // namespace refactoring::comments
