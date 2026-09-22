@@ -22,7 +22,9 @@ public:
 
     OrderSummary summarise() const;
 
-double calculateTotal(double subtotal, double discount, double tax) const;
+    double calculateTotal(double subtotal, double discount, double tax) const;
+
+double calculateTaxableAmount(double subtotal, double discount) const;
 
     double calculateTax(double subtotal, double discount) const;
 
