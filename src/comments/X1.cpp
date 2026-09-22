@@ -9,7 +9,6 @@ int X1::m(int lowerBound, int upperBound) {
         accumulatedSum += square(number);
     }
 
-    // Return accumulated sum
     return accumulatedSum;
 }
 
