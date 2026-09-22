@@ -4,6 +4,11 @@
 
 namespace refactoring::divergentchange {
 
+
+class EmailValidator{
+
+    bool isValidEmail(const char* email) const;
+};
 class CustomerService {
 public:
     bool isValidEmail(const char* email) const;
