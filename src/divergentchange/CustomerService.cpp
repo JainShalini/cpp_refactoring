@@ -6,6 +6,7 @@
 
 namespace refactoring::divergentchange {
 
+
 namespace {
 
 std::string trim(const std::string& s) {
@@ -25,6 +26,12 @@ std::string toUpper(const std::string& s) {
 }
 
 } // namespace
+
+
+bool EmailValidator::isValidEmail(const char* email) const 
+{
+    return true;
+}
 
 bool CustomerService::isValidEmail(const char* email) const {
     if (email == nullptr) {
