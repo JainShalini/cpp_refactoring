@@ -2,7 +2,7 @@
 
 #include "comments/X1.h"
 
-using refactoring::comments::X1;
+using refactoring::comments::SquareCalculator;
 
 TEST(X1Test, t1) {
     int a = 7;
@@ -14,7 +14,7 @@ TEST(X1Test, t1) {
         expected += i * i;
     }
 
-    int actual = X1::sumOfSquaresInRange(a, b);
+    int actual = SquareCalculator::sumOfSquaresInRange(a, b);
 
     EXPECT_EQ(expected, actual);
 }

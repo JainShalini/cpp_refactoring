@@ -2,7 +2,7 @@
 
 namespace refactoring::comments {
 
-class X1 {
+class SquareCalculator {
 public:
     static int sumOfSquaresInRange(int q, int z);
     static int square(int k);
