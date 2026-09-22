@@ -22,9 +22,12 @@ public:
 
     OrderSummary summarise() const;
 
-void validate() const;
+    double calculateSubtotal() const;
+    
 
-private:
+    void validate() const;
+
+  private:
     std::optional<std::vector<OrderItem>> items_;
     Customer customer_;
 };

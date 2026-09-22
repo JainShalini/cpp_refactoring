@@ -2,18 +2,22 @@
 
 namespace refactoring::longmethod {
 
-Order::Order(std::optional<std::vector<OrderItem>> items, Customer customer)
-    : items_(std::move(items)), customer_(customer) {}
-
-OrderSummary Order::summarise() const {
-
-  validate();
-
-  // Subtotal calculation
+double Order::calculateSubtotal() const
+{
   double subtotal = 0.0;
   for (const OrderItem &item : *items_) {
     subtotal += item.getPrice() * item.getQuantity();
   }
+  return subtotal;
+}
+Order::Order(std::optional<std::vector<OrderItem>> items, Customer customer)
+    : items_(std::move(items)), customer_(customer) {}
+
+OrderSummary Order::summarise() const {
+  validate();
+
+  // Subtotal calculation
+  double subtotal = calculateSubtotal();
 
   // Discount rules
   double discount = 0.0;
