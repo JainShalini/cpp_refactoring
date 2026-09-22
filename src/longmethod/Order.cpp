@@ -7,41 +7,39 @@ Order::Order(std::optional<std::vector<OrderItem>> items, Customer customer)
 
 OrderSummary Order::summarise() const {
 
-    // Validation
-validate();
+  validate();
 
-    // Subtotal calculation
-    double subtotal = 0.0;
-    for (const OrderItem& item : *items_) {
-        subtotal += item.getPrice() * item.getQuantity();
-    }
+  // Subtotal calculation
+  double subtotal = 0.0;
+  for (const OrderItem &item : *items_) {
+    subtotal += item.getPrice() * item.getQuantity();
+  }
 
-    // Discount rules
-    double discount = 0.0;
-    if (customer_.isLoyal()) {
-        discount = subtotal * 0.10;
-    } else if (subtotal > 100) {
-        discount = subtotal * 0.05;
-    }
+  // Discount rules
+  double discount = 0.0;
+  if (customer_.isLoyal()) {
+    discount = subtotal * 0.10;
+  } else if (subtotal > 100) {
+    discount = subtotal * 0.05;
+  }
 
-    // Tax calculation
-    double taxableAmount = subtotal - discount;
-    double tax = taxableAmount * 0.20;
+  // Tax calculation
+  double taxableAmount = subtotal - discount;
+  double tax = taxableAmount * 0.20;
 
-    // Total calculation
-    double total = taxableAmount + tax;
+  // Total calculation
+  double total = taxableAmount + tax;
 
-    return OrderSummary(subtotal, discount, tax, total);
+  return OrderSummary(subtotal, discount, tax, total);
 }
 
-void Order::validate() const
-{
-    if (!items_.has_value()) {
-        throw IllegalStateException("Items cannot be null");
-    }
-    if (items_->empty()) {
-        throw IllegalStateException("Order must contain items");
-    }
+void Order::validate() const {
+  if (!items_.has_value()) {
+    throw IllegalStateException("Items cannot be null");
+  }
+  if (items_->empty()) {
+    throw IllegalStateException("Order must contain items");
+  }
 }
 
 } // namespace refactoring::longmethod
