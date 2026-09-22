@@ -2,7 +2,7 @@
 
 namespace refactoring::comments {
 
-int X1::m(int lowerBound, int upperBound) {
+int X1::sumOfSquaresInRange(int lowerBound, int upperBound) {
     int accumulatedSum = 0;
 
     for (int number = lowerBound; number <= upperBound; number++) {
