@@ -1,16 +1,10 @@
 #pragma once
 
 #include <string>
+#include "EmailValidator.h"
 
 namespace refactoring::divergentchange {
 
-
-class EmailValidator{
-
-    public:
-
-    bool isValidEmail(const char* email) const;
-};
 class CustomerService {
 private:
     EmailValidator emailValidator;

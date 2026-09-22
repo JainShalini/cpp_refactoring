@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <cctype>
 #include <regex>
+#include "EmailValidator.h"
 
 namespace refactoring::divergentchange {
 
@@ -27,15 +28,6 @@ std::string toUpper(const std::string& s) {
 
 } // namespace
 
-
-bool EmailValidator::isValidEmail(const char* email) const 
-{
-    if (email == nullptr) {
-        return false;
-    }
-    static const std::regex pattern("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
-    return std::regex_match(email, pattern);
-}
 
 bool CustomerService::isValidEmail(const char* email) const {
 
