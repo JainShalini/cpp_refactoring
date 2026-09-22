@@ -10,6 +10,9 @@ class EmailValidator{
     bool isValidEmail(const char* email) const;
 };
 class CustomerService {
+private:
+    EmailValidator emailValidator;
+    
 public:
     bool isValidEmail(const char* email) const;
     std::string formatDisplayName(const std::string& firstName, const std::string& lastName) const;
