@@ -2,8 +2,7 @@
 
 namespace refactoring::longmethod {
 
-double Order::calculateSubtotal() const
-{
+double Order::calculateSubtotal() const {
   double subtotal = 0.0;
   for (const OrderItem &item : *items_) {
     subtotal += item.getPrice() * item.getQuantity();
@@ -20,18 +19,21 @@ OrderSummary Order::summarise() const {
 
   double discount = calculateDiscount(subtotal);
 
-  // Tax calculation
   double tax = calculateTax(subtotal, discount);
 
   // Total calculation
-  double total = (subtotal - discount) + tax;
+  double total = calculateTotal(subtotal, discount, tax);
 
   return OrderSummary(subtotal, discount, tax, total);
 }
 
-double Order::calculateTax(double subtotal, double discount) const
+double Order::calculateTotal(double subtotal, double discount, double tax) const
 {
-return (subtotal - discount) * 0.20;
+return (subtotal - discount) + tax;
+}
+
+double Order::calculateTax(double subtotal, double discount) const {
+  return (subtotal - discount) * 0.20;
 }
 
 double Order::calculateDiscount(double subtotal) const {
