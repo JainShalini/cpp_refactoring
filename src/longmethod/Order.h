@@ -22,6 +22,8 @@ public:
 
     OrderSummary summarise() const;
 
+double calculateTax(double subtotal, double discount) const;
+
     double calculateSubtotal() const;
 
     double calculateDiscount(double subtotal) const;
