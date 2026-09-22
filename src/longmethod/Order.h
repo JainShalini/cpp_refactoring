@@ -23,7 +23,8 @@ public:
     OrderSummary summarise() const;
 
     double calculateSubtotal() const;
-    
+
+    double calculateDiscount(double subtotal) const;
 
     void validate() const;
 
