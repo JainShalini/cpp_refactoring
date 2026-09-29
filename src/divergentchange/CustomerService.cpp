@@ -2,9 +2,6 @@
 
 #include <algorithm>
 #include <cctype>
-#include "EmailValidator.h"
-#include "LoyaltyPoints.h"
-
 namespace refactoring::divergentchange {
 
 
