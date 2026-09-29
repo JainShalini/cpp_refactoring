@@ -14,9 +14,9 @@ bool Product::isOnSale() const {
 
 double Product::priceAfterDiscount(const refactoring::featureenvy::Product &product) const
 {
-    double price = product.getPrice();
+    double price = getPrice();
 
-    if (product.isOnSale())
+    if (isOnSale())
     {
         price = price * 0.8;
     }
