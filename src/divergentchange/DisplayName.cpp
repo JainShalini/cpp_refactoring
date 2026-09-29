@@ -1,4 +1,6 @@
 #include "DisplayName.h"
+#include "algorithm"
+#include "cctype"
 
 std::string trim(const std::string& s) {
     auto start = s.find_first_not_of(" \t\n\r\f\v");
