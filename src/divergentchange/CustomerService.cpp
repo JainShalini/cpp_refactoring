@@ -4,7 +4,6 @@
 #include <cctype>
 #include "EmailValidator.h"
 #include "LoyaltyPoints.h"
-#include "AccountStatus.h"
 
 namespace refactoring::divergentchange {
 
