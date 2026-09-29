@@ -5,9 +5,6 @@ namespace refactoring::featureenvy {
 class Product {
 public:
     Product(double price, bool onSale);
-
-    double getPrice() const;
-    bool isOnSale() const;
     double priceAfterDiscount() const;
 
 private:
