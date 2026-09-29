@@ -1,12 +1,14 @@
 #pragma once
 
 #include <string>
+#include "Customer.h"
 
 namespace refactoring::longparameterlist {
 
 class ShippingNoteGenerator {
 public:
     std::string generateShippingNote(
+            const Customer& customer,
             const std::string& customerFirstName,
             const std::string& customerLastName,
 
