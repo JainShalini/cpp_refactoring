@@ -12,7 +12,7 @@ bool Product::isOnSale() const {
     return onSale_;
 }
 
-double Product::priceAfterDiscount(const refactoring::featureenvy::Product &product) const
+double Product::priceAfterDiscount() const
 {
     double price = getPrice();
 
