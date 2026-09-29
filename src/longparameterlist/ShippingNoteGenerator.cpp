@@ -5,9 +5,6 @@ namespace refactoring::longparameterlist {
 
 std::string ShippingNoteGenerator::generateShippingNote(
         const Customer& customer,
-        const std::string& customerFirstName,
-        const std::string& customerLastName,
-
 
         const std::string& addressLine1,
         const char* addressLine2,
