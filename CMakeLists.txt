@@ -27,6 +27,7 @@ add_library(refactoring_core
     src/longmethod/OrderSummary.cpp
     src/longparameterlist/ShippingNoteGenerator.cpp
     src/divergentchange/LoyaltyPoints.cpp
+    src/divergentchange/AccountStatus.cpp
 )
 target_include_directories(refactoring_core PUBLIC src)
 
@@ -39,6 +40,7 @@ add_executable(refactoring_tests
     tests/featureenvy/PriceCalculatorTest.cpp
     tests/longmethod/OrderTest.cpp
     tests/longparameterlist/ShippingNoteGeneratorTest.cpp
+
 )
 target_link_libraries(refactoring_tests PRIVATE refactoring_core GTest::gtest_main)
 
