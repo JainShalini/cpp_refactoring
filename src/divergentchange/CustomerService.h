@@ -3,6 +3,7 @@
 #include <string>
 #include "EmailValidator.h"
 #include "LoyaltyPoints.h"
+#include "AccountStatus.h"
 
 namespace refactoring::divergentchange {
 
@@ -10,6 +11,7 @@ class CustomerService {
 private:
     EmailValidator emailValidator;
     LoyaltyPoints loyaltyPoints;
+    AccountStatus accountStatus;
 
 public:
     bool isValidEmail(const char* email) const;

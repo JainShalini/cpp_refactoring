@@ -9,5 +9,3 @@ std::string AccountStatus::determine (int daysSinceLastLogin) const
     }
     return "ACTIVE";
 }
-
-

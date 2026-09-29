@@ -4,6 +4,7 @@
 #include <cctype>
 #include "EmailValidator.h"
 #include "LoyaltyPoints.h"
+#include "AccountStatus.h"
 
 namespace refactoring::divergentchange {
 
@@ -44,12 +45,7 @@ int CustomerService::calculateLoyaltyPoints(int numberOfPurchases) const {
 }
 
 std::string CustomerService::determineAccountStatus(int daysSinceLastLogin) const {
-    if (daysSinceLastLogin > 365) {
-        return "INACTIVE";
-    } else if (daysSinceLastLogin > 30) {
-        return "DORMANT";
-    }
-    return "ACTIVE";
+    return accountStatus.determine(daysSinceLastLogin);
 }
 
 } // namespace refactoring::divergentchange
