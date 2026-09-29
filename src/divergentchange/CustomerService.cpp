@@ -2,7 +2,6 @@
 
 #include <algorithm>
 #include <cctype>
-#include <regex>
 #include "EmailValidator.h"
 #include "LoyaltyPoints.h"
 
