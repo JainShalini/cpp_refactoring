@@ -8,6 +8,7 @@ public:
 
     double getPrice() const;
     bool isOnSale() const;
+    double priceAfterDiscount(const refactoring::featureenvy::Product &product) const;
 
 private:
     double price_;
