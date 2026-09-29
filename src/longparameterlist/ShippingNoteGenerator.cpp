@@ -19,7 +19,7 @@ std::string ShippingNoteGenerator::generateShippingNote(
         const std::string& itemDescription,
         int quantity) const {
 
-    std::string fullName = customerFirstName + " " + customerLastName;
+    std::string fullName = customer.firstName + " " + customer.lastName;
 
     std::string address = addressLine1 + ", "
             + (addressLine2 != nullptr ? std::string(addressLine2) + ", " : "")
