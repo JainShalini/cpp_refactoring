@@ -4,6 +4,7 @@
 #include "EmailValidator.h"
 #include "LoyaltyPoints.h"
 #include "AccountStatus.h"
+#include "DisplayName.h"
 
 namespace refactoring::divergentchange {
 
@@ -12,6 +13,7 @@ private:
     EmailValidator emailValidator;
     LoyaltyPoints loyaltyPoints;
     AccountStatus accountStatus;
+    DisplayName displayName;
 
 public:
     bool isValidEmail(const char* email) const;
