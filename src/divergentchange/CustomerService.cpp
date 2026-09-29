@@ -4,6 +4,7 @@
 #include <cctype>
 #include <regex>
 #include "EmailValidator.h"
+#include "LoyaltyPoints.h"
 
 namespace refactoring::divergentchange {
 
@@ -40,7 +41,7 @@ std::string CustomerService::formatDisplayName(const std::string& firstName, con
 }
 
 int CustomerService::calculateLoyaltyPoints(int numberOfPurchases) const {
-    return numberOfPurchases * 10;
+    return loyaltyPoints.calculate(numberOfPurchases);
 }
 
 std::string CustomerService::determineAccountStatus(int daysSinceLastLogin) const {

@@ -2,12 +2,14 @@
 
 #include <string>
 #include "EmailValidator.h"
+#include "LoyaltyPoints.h"
 
 namespace refactoring::divergentchange {
 
 class CustomerService {
 private:
     EmailValidator emailValidator;
+    LoyaltyPoints loyaltyPoints;
 
 public:
     bool isValidEmail(const char* email) const;

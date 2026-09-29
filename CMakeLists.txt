@@ -26,6 +26,7 @@ add_library(refactoring_core
     src/longmethod/OrderItem.cpp
     src/longmethod/OrderSummary.cpp
     src/longparameterlist/ShippingNoteGenerator.cpp
+    src/divergentchange/LoyaltyPoints.cpp
 )
 target_include_directories(refactoring_core PUBLIC src)
 
