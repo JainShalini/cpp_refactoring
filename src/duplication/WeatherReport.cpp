@@ -28,8 +28,7 @@ void WeatherReport::formatDailyReport(const std::vector<Forecast>& forecasts, st
 
         
         if (forecast.isMorning()) {
-            std::string period;
-            period = capitaliseFirstCharacter(forecast.getPeriod());
+            std::string period = capitaliseFirstCharacter(forecast.getPeriod());
             std::string line =   period + ": " + javaDoubleToString(forecast.getTemperature()) + "°C, "
                     + forecast.getCondition() + ", wind " + std::to_string(forecast.getWindSpeed()) + "km/h";
             output.push_back(line);
