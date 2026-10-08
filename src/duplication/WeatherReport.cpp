@@ -26,8 +26,11 @@ void WeatherReport::formatDailyReport(const std::vector<Forecast>& forecasts, st
 
     for (const Forecast& forecast : forecasts) {
 
+        
         if (forecast.isMorning()) {
-            std::string line = "Morning: " + javaDoubleToString(forecast.getTemperature()) + "°C, "
+            std::string period = forecast.getPeriod();
+            period[0] = static_cast<char>(std::toupper(static_cast<unsigned char>(forecast.getPeriod()[0])));
+            std::string line =   period + ": " + javaDoubleToString(forecast.getTemperature()) + "°C, "
                     + forecast.getCondition() + ", wind " + std::to_string(forecast.getWindSpeed()) + "km/h";
             output.push_back(line);
         }
