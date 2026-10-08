@@ -25,32 +25,12 @@ std::string javaDoubleToString(double value) {
 void WeatherReport::formatDailyReport(const std::vector<Forecast>& forecasts, std::vector<std::string>& output) {
 
     for (const Forecast& forecast : forecasts) {
-
         
-        if (forecast.isMorning()) {
-            std::string period = capitaliseFirstCharacter(forecast.getPeriod());
-            std::string line =   period + ": " + javaDoubleToString(forecast.getTemperature()) + "°C, "
-                    + forecast.getCondition() + ", wind " + std::to_string(forecast.getWindSpeed()) + "km/h";
-            output.push_back(line);
-        }
+        std::string period = capitaliseFirstCharacter(forecast.getPeriod());
+        std::string line =   period + ": " + javaDoubleToString(forecast.getTemperature()) + "°C, "
+                + forecast.getCondition() + ", wind " + std::to_string(forecast.getWindSpeed()) + "km/h";
+        output.push_back(line);
 
-        if (forecast.isAfternoon()) {
-            std::string line = "Afternoon: " + javaDoubleToString(forecast.getTemperature()) + "°C, "
-                    + forecast.getCondition() + ", wind " + std::to_string(forecast.getWindSpeed()) + "km/h";
-            output.push_back(line);
-        }
-
-        if (forecast.isEvening()) {
-            std::string line = "Evening: " + javaDoubleToString(forecast.getTemperature()) + "°C, "
-                    + forecast.getCondition() + ", wind " + std::to_string(forecast.getWindSpeed()) + "km/h";
-            output.push_back(line);
-        }
-
-        if (forecast.isNight()) {
-            std::string line = "Night: " + javaDoubleToString(forecast.getTemperature()) + "°C, "
-                    + forecast.getCondition() + ", wind " + std::to_string(forecast.getWindSpeed()) + "km/h";
-            output.push_back(line);
-        }
     }
 }
 
