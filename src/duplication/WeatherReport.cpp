@@ -28,8 +28,8 @@ void WeatherReport::formatDailyReport(const std::vector<Forecast>& forecasts, st
 
         
         if (forecast.isMorning()) {
-            std::string period = forecast.getPeriod();
-            period[0] = static_cast<char>(std::toupper(static_cast<unsigned char>(forecast.getPeriod()[0])));
+            std::string period;
+            period = capitaliseFirstCharacter(forecast.getPeriod());
             std::string line =   period + ": " + javaDoubleToString(forecast.getTemperature()) + "°C, "
                     + forecast.getCondition() + ", wind " + std::to_string(forecast.getWindSpeed()) + "km/h";
             output.push_back(line);
@@ -53,6 +53,12 @@ void WeatherReport::formatDailyReport(const std::vector<Forecast>& forecasts, st
             output.push_back(line);
         }
     }
+}
+
+std::string WeatherReport::capitaliseFirstCharacter(std::__1::string period)
+{
+    period[0] = static_cast<char>(std::toupper(static_cast<unsigned char>(period[0])));
+    return period;
 }
 
 } // namespace refactoring::duplication

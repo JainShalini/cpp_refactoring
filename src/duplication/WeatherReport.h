@@ -9,7 +9,8 @@ namespace refactoring::duplication {
 
 class WeatherReport {
 public:
-    void formatDailyReport(const std::vector<Forecast>& forecasts, std::vector<std::string>& output);
+    void formatDailyReport(const std::vector<Forecast> &forecasts, std::vector<std::string> &output);
+    std::string capitaliseFirstCharacter(std::__1::string period);
 };
 
 } // namespace refactoring::duplication
