@@ -17,6 +17,10 @@ int Forecast::getWindSpeed() const {
     return windSpeed_;
 }
 
+std::string Forecast::getPeriod() const {
+    return period_;
+}
+
 bool Forecast::isMorning() const {
     return period_ == "morning";
 }

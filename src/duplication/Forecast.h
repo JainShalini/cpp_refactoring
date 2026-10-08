@@ -11,6 +11,7 @@ public:
     double getTemperature() const;
     std::string getCondition() const;
     int getWindSpeed() const;
+    std::string getPeriod() const;
 
     bool isMorning() const;
     bool isAfternoon() const;
