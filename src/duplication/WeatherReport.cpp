@@ -25,7 +25,7 @@ std::string javaDoubleToString(double value) {
 void WeatherReport::formatDailyReport(const std::vector<Forecast>& forecasts, std::vector<std::string>& output) {
 
     for (const Forecast& forecast : forecasts) {
-        
+
         std::string period = capitaliseFirstCharacter(forecast.getPeriod());
         std::string line =   period + ": " + javaDoubleToString(forecast.getTemperature()) + "°C, "
                 + forecast.getCondition() + ", wind " + std::to_string(forecast.getWindSpeed()) + "km/h";
@@ -34,7 +34,7 @@ void WeatherReport::formatDailyReport(const std::vector<Forecast>& forecasts, st
     }
 }
 
-std::string WeatherReport::capitaliseFirstCharacter(std::__1::string period)
+std::string WeatherReport::capitaliseFirstCharacter(std::string period)
 {
     period[0] = static_cast<char>(std::toupper(static_cast<unsigned char>(period[0])));
     return period;
